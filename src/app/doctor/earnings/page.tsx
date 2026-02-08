@@ -9,7 +9,7 @@ type Period = "daily" | "weekly" | "monthly";
 
 export default function EarningsPage() {
   const { user } = useAuth();
-  const doctorId = user?.doctorId ?? user?.id;
+  const doctorId = user?.doctorId ?? user?.id ?? "";
   const doctor = getDoctors().find((d) => d.id === doctorId);
   const [period, setPeriod] = useState<Period>("monthly");
 

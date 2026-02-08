@@ -16,7 +16,7 @@ export default function SessionsPage() {
   const { user } = useAuth();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const doctorId = user?.doctorId ?? user?.id;
+  const doctorId = user?.doctorId ?? user?.id ?? "";
   const focusedId = searchParams.get("id");
 
   const bookings = getBookingsForDoctor(doctorId).filter(

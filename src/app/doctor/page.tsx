@@ -8,7 +8,7 @@ import { Calendar, ClipboardCheck, DollarSign, Users } from "lucide-react";
 
 export default function DoctorDashboard() {
   const { user } = useAuth();
-  const doctorId = user?.doctorId ?? user?.id;
+  const doctorId = user?.doctorId ?? user?.id ?? "";
   const doctor = getDoctors().find((d) => d.id === doctorId);
   const bookings = getBookingsForDoctor(doctorId).filter(
     (b) => b.status === "approved" || b.status === "completed"

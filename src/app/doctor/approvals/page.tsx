@@ -14,7 +14,7 @@ import { Check, X } from "lucide-react";
 export default function ApprovalsPage() {
   const { user } = useAuth();
   const router = useRouter();
-  const doctorId = user?.doctorId ?? user?.id;
+  const doctorId = user?.doctorId ?? user?.id ?? "";
   const pending = getBookingsForDoctor(doctorId).filter(
     (b) => b.status === "pending_approval"
   );
